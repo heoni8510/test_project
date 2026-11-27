@@ -1,0 +1,276 @@
+<title>마이에그라이프 부스 벽면 5안</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: 한 안당 한 행. 왼쪽에 부스 정면 시안, 오른쪽에 벽면별 설명. 좁은 화면에서는 세로로 쌓임. */
+:root {
+  --bg: #f5f3ee;
+  --surface: #ffffff;
+  --ink: #26241f;
+  --muted: #6b675d;
+  --line: #dcd8cc;
+  --yolk: #e8a010;
+  --yolk-ink: #7a4b00;
+  --display: "Black Han Sans", "Noto Sans KR", sans-serif;
+  --text: "Noto Sans KR", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1b18; --surface: #272622; --ink: #efece4; --muted: #a8a496; --line: #3a3832;
+    --yolk: #f2b740; --yolk-ink: #f2b740; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1b18; --surface: #272622; --ink: #efece4; --muted: #a8a496; --line: #3a3832;
+  --yolk: #f2b740; --yolk-ink: #f2b740; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--text); line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 64px;
+}
+.wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+header h1 { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 4.5vw, 3rem); line-height: 1.15; margin: 0 0 10px; text-wrap: balance; }
+header p { margin: 0; max-width: 62ch; color: var(--muted); }
+nav { display: flex; flex-wrap: wrap; gap: 8px; }
+nav a { color: var(--ink); text-decoration: none; border: 1px solid var(--line); background: var(--surface); padding: 6px 14px; border-radius: 99px; font-size: .9rem; }
+nav a:hover, nav a:focus-visible { border-color: var(--yolk); outline: none; box-shadow: 0 0 0 2px var(--yolk); }
+article { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; scroll-margin-top: 16px; }
+.art svg { width: 100%; height: auto; display: block; border-radius: 6px; background: #d9d6cf; }
+.art figcaption { font-size: .8rem; color: var(--muted); margin-top: 8px; }
+figure { margin: 0; min-width: 0; }
+.info { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.tag { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--yolk-ink); font-weight: 700; }
+.info h2 { font-family: var(--display); font-weight: 400; font-size: 1.7rem; margin: 2px 0 4px; line-height: 1.2; }
+.lead { margin: 0; color: var(--muted); }
+dl { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+dt { font-weight: 700; font-size: .85rem; color: var(--yolk-ink); margin-bottom: 2px; }
+dd { margin: 0; font-size: .95rem; }
+.sw { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.sw i { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); display: inline-block; }
+.sw span { font-size: .8rem; color: var(--muted); margin-left: 4px; }
+.notes { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+.notes h2 { font-family: var(--display); font-weight: 400; font-size: 1.4rem; margin: 0 0 10px; }
+.notes ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+@media (max-width: 860px) { article { grid-template-columns: minmax(0, 1fr); padding: 14px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>마이에그라이프 부스<br>벽면 디자인 5안</h1>
+    <p>가운데 칠판을 중심으로 한 타일 벽면과 오른쪽 계란 알코브 벽면을 한 세트로 묶어 5가지 방향으로 정리했습니다. 시안은 보내주신 정면 렌더 구도에 맞춘 간이 스케치이며, 실제 비율과 색은 제작 단계에서 확정합니다.</p>
+  </header>
+  <nav id="nav" aria-label="시안 바로가기"></nav>
+  <main id="list" class="wrap" style="gap:28px"></main>
+  <section class="notes">
+    <h2>어느 안이든 공통으로 챙길 점</h2>
+    <ul>
+      <li>타일 줄눈은 그대로 살려두고, 시트지나 페인트는 타일 위에 얹는 방식이라 철거 후 원상복구가 쉽습니다. 박람회 부스라면 무광 시트 컷팅이 가장 빠릅니다.</li>
+      <li>상단 램프 조명이 흰 타일에 반사되므로 광택 있는 인쇄물은 빛이 번집니다. 벽면 그래픽은 무광 소재를 권장합니다.</li>
+      <li>알코브는 포토존 역할이 크므로 SNS 해시태그와 QR을 눈높이(약 140cm) 근처에 작게 넣으면 참여율이 올라갑니다.</li>
+      <li>칠판은 시식 안내, 오늘의 메뉴, 이벤트 문구를 매일 바꿔 쓰는 자리로 두면 벽면 그래픽과 겹치지 않습니다.</li>
+    </ul>
+  </section>
+</div>
+
+<script>
+(function () {
+  var W = 'MY Egg Life';
+
+  function hen(x, y, s, body, comb) {
+    return '<g transform="translate(' + x + ',' + y + ') scale(' + s + ')">' +
+      '<ellipse cx="0" cy="0" rx="22" ry="16" fill="' + body + '" stroke="#8a6a4c" stroke-width="1.2"/>' +
+      '<circle cx="-20" cy="-14" r="9" fill="' + body + '" stroke="#8a6a4c" stroke-width="1.2"/>' +
+      '<path d="M-24,-23 l3,-7 l3,5 l3,-6 l2,8z" fill="' + comb + '"/>' +
+      '<path d="M-29,-14 l-8,3 l8,2z" fill="#E8A010"/>' +
+      '<circle cx="-22" cy="-15" r="1.6" fill="#222"/>' +
+      '<path d="M18,-4 q14,-14 10,-22 q-6,8 -14,10z" fill="' + body + '" stroke="#8a6a4c" stroke-width="1.2"/>' +
+      '<path d="M-6,16 v8 M6,16 v8" stroke="#E8A010" stroke-width="3" stroke-linecap="round"/></g>';
+  }
+
+  /* 공통 부스 골격: 타일 벽, 칠판, 카운터, 계란 알코브 */
+  function base(o) {
+    var s = '<svg viewBox="0 0 1000 480" role="img" aria-label="' + o.alt + '" xmlns="http://www.w3.org/2000/svg">';
+    s += '<defs>' +
+      '<pattern id="t' + o.id + '" width="28" height="28" patternUnits="userSpaceOnUse">' +
+      '<rect width="28" height="28" fill="#fbfbf9"/><path d="M0,0H28M0,14H28M0,0V14M14,14V28" stroke="#d6d6d0" stroke-width="1" fill="none"/></pattern>' +
+      '<pattern id="f' + o.id + '" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#f4f4f1"/><circle cx="6" cy="6" r="2.2" fill="#2f2f2f" opacity=".75"/></pattern>' +
+      '<clipPath id="w' + o.id + '"><rect x="40" y="66" width="660" height="274"/></clipPath>' +
+      '<clipPath id="a' + o.id + '"><rect x="730" y="104" width="170" height="296"/></clipPath>' +
+      '</defs>';
+    s += '<rect width="1000" height="480" fill="#d9d6cf"/>';
+    s += '<rect x="900" y="40" width="70" height="430" fill="#ecebe6"/>';
+    s += '<rect x="40" y="40" width="660" height="300" fill="url(#t' + o.id + ')"/>';
+    s += '<g clip-path="url(#w' + o.id + ')">' + o.tile + '</g>';
+    /* 상단 로고 배너 */
+    s += '<rect x="40" y="40" width="660" height="26" fill="#f7f7f4" stroke="#d6d6d0"/><text x="370" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#444">' + W + '</text>';
+    for (var i = 0; i < 6; i++) { var bx = 90 + i * 112; s += '<path d="M' + bx + ',28 v8" stroke="#888"/><circle cx="' + bx + '" cy="40" r="6" fill="#fff6c9"/>'; }
+    /* 칠판 */
+    s += o.board;
+    /* 카운터 */
+    s += '<rect x="40" y="340" width="660" height="130" fill="#ebeae5"/><rect x="30" y="334" width="680" height="12" fill="#c9a47c"/>';
+    var cols = ['#c23232', '#2f7d4a', '#e8641e'];
+    for (var c = 0; c < 3; c++) { s += '<rect x="' + (70 + c * 170) + '" y="352" width="140" height="34" rx="2" fill="#8a6a4c"/><rect x="' + (80 + c * 170) + '" y="356" width="120" height="26" fill="' + cols[c] + '"/>'; }
+    s += '<line x1="40" y1="395" x2="700" y2="395" stroke="#d2d0c9"/>';
+    /* 계란 알코브 */
+    s += '<rect x="720" y="76" width="190" height="24" fill="#f7f7f4" stroke="#d6d6d0"/><text x="815" y="92" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#444">' + W + '</text>';
+    s += '<rect x="730" y="104" width="170" height="296" fill="' + o.alcBg + '"/>';
+    s += '<g clip-path="url(#a' + o.id + ')">' + (o.alcBack || '') +
+      '<path d="M738,360 C722,318 764,300 776,262 C790,222 846,228 856,270 C890,290 908,330 888,366 Z" fill="#fffdf6"/>' +
+      '<path d="M778,352 A44,44 0 0 1 866,352 Z" fill="#F2A31B"/><ellipse cx="805" cy="318" rx="9" ry="5" fill="#fff" opacity=".55" transform="rotate(-30 805 318)"/>' +
+      (o.alcFront || '') + '</g>';
+    s += '<path d="M730,400 H900 L920,470 H700Z" fill="url(#f' + o.id + ')"/>';
+    s += '<path d="M0,470 H1000 V480 H0Z" fill="#c9c6bd"/>';
+    return s + '</svg>';
+  }
+
+  var boardPlain = function (frame, fill, text, tc, extra) {
+    return '<rect x="266" y="126" width="208" height="86" fill="' + frame + '"/><rect x="274" y="134" width="192" height="70" fill="' + fill + '"/>' +
+      '<text x="370" y="176" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="17" font-weight="700" fill="' + tc + '">' + text + '</text>' + (extra || '');
+  };
+
+  var concepts = [];
+
+  /* 1. 선샤인 모닝 */
+  (function () {
+    var rays = '';
+    for (var a = 0; a < 360; a += 12) {
+      var r = a * Math.PI / 180, cx = 370, cy = 169, rx = 125, ry = 68, odd = (a / 12) % 2, L = odd ? 60 : 105;
+      var x0 = cx + Math.cos(r) * rx, y0 = cy + Math.sin(r) * ry, x1 = x0 + Math.cos(r) * L, y1 = y0 + Math.sin(r) * L;
+      rays += '<line x1="' + x0.toFixed(1) + '" y1="' + y0.toFixed(1) + '" x2="' + x1.toFixed(1) + '" y2="' + y1.toFixed(1) + '" stroke="' + (odd ? '#F29E38' : '#F7C948') + '" stroke-width="7" stroke-linecap="round"/>';
+    }
+    var alc = '';
+    for (var k = 0; k < 11; k++) {
+      var ang = (200 + k * 14) * Math.PI / 180, ax = 815, ay = 345, L2 = k % 2 ? 115 : 150;
+      alc += '<line x1="' + (ax + Math.cos(ang) * 60).toFixed(1) + '" y1="' + (ay + Math.sin(ang) * 60).toFixed(1) + '" x2="' + (ax + Math.cos(ang) * L2).toFixed(1) + '" y2="' + (ay + Math.sin(ang) * L2).toFixed(1) + '" stroke="#fffdf0" stroke-width="6" stroke-linecap="round"/>';
+    }
+    concepts.push({
+      id: 1, tag: 'Sunny Morning', title: '선샤인 모닝', lead: '노른자가 떠오르는 순간을 벽 전체로 확장하는 가장 밝고 직관적인 안입니다.',
+      svg: base({ id: 1, alt: '선샤인 모닝 시안', tile: rays, board: boardPlain('#d9a441', '#3f4a44', '오늘도 Good Morning!', '#fff8dc'), alcBg: '#F7D86B', alcBack: alc,
+        alcFront: '<text x="815" y="150" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="15" font-weight="700" fill="#8a5a00">Be the Yolk</text>' }),
+      tile: '칠판을 해 삼아 노랑·주황 햇살 라인이 타일 위로 퍼집니다. 라인 두께는 타일 한 줄(약 7cm) 기준으로 맞추면 줄눈과 어긋나지 않습니다.',
+      egg: '알코브 벽을 연노랑으로 칠하고 기존 네온 광선을 흰색 라인으로 더 길게 늘립니다. 노른자 아래에 따뜻한 LED를 숨겨 글로우를 줍니다. 문구는 "Be the Yolk".',
+      board: '"오늘의 시식 메뉴"와 시간표를 분필로 적습니다.',
+      tip: '무광 컬러 시트 컷팅이면 하루 작업으로 끝납니다.',
+      pal: [['#F7C948', '햇살 노랑'], ['#F29E38', '주황'], ['#F7D86B', '벽 연노랑'], ['#3f4a44', '칠판']]
+    });
+  })();
+
+  /* 2. 에그 갤러리 */
+  (function () {
+    function eggLine(x, y, k) {
+      if (k === 0) return '<ellipse cx="' + x + '" cy="' + y + '" rx="17" ry="22" fill="none" stroke="#222" stroke-width="1.6"/>';
+      if (k === 1) return '<path d="M' + (x - 24) + ',' + (y + 6) + ' C' + (x - 30) + ',' + (y - 14) + ' ' + (x - 6) + ',' + (y - 26) + ' ' + (x + 8) + ',' + (y - 16) + ' C' + (x + 30) + ',' + (y - 14) + ' ' + (x + 30) + ',' + (y + 14) + ' ' + (x + 6) + ',' + (y + 18) + ' C' + (x - 10) + ',' + (y + 24) + ' ' + (x - 22) + ',' + (y + 18) + ' ' + (x - 24) + ',' + (y + 6) + 'z" fill="none" stroke="#222" stroke-width="1.6"/><circle cx="' + x + '" cy="' + y + '" r="8" fill="none" stroke="#222" stroke-width="1.6"/>';
+      return '<ellipse cx="' + x + '" cy="' + y + '" rx="20" ry="14" fill="none" stroke="#222" stroke-width="1.6"/><path d="M' + (x - 20) + ',' + y + ' h40" stroke="#222" stroke-width="1.6"/>';
+    }
+    var fr = [[58, 84, 82, 112, 'No.1 Sunny', 0], [150, 84, 82, 112, 'No.2 Fried', 1], [58, 218, 174, 92, 'No.3 Boiled', 2], [478, 84, 82, 112, 'No.4 Poached', 1], [570, 84, 82, 112, 'No.5 Whole', 0], [478, 218, 174, 92, 'No.6 Scramble', 2]];
+    var t = '';
+    fr.forEach(function (f) {
+      t += '<rect x="' + f[0] + '" y="' + f[1] + '" width="' + f[2] + '" height="' + f[3] + '" fill="#fff" stroke="#222" stroke-width="2"/>' + eggLine(f[0] + f[2] / 2, f[1] + f[3] / 2 - 6, f[5]) +
+        '<text x="' + (f[0] + f[2] / 2) + '" y="' + (f[1] + f[3] - 7) + '" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#444">' + f[4] + '</text>';
+    });
+    concepts.push({
+      id: 2, tag: 'Egg Gallery', title: '에그 갤러리', lead: '계란을 작품처럼 보여주는 미니멀한 안입니다. 흰 부스와 가장 잘 어울리고 고급스럽습니다.',
+      svg: base({ id: 2, alt: '에그 갤러리 시안', tile: t, board: boardPlain('#c8a45a', '#2b2d2c', 'EGG OF THE DAY', '#f3ead2', '<rect x="258" y="118" width="224" height="102" fill="none" stroke="#222" stroke-width="2"/>'),
+        alcBg: '#2d2c2a', alcBack: '<path d="M815,104 L700,400 H930Z" fill="#fff" opacity=".12"/>',
+        alcFront: '<rect x="777" y="370" width="76" height="20" fill="#e9e5da"/><text x="815" y="383" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#333">No.0 The Yolk</text>' }),
+      tile: '흰 타일 위에 얇은 검정 라인 일러스트를 액자처럼 배치합니다. 칠판 양옆으로 3점씩, 조리법별 계란을 한 줄 드로잉으로 그리고 작은 캡션을 붙입니다.',
+      egg: '벽을 차콜로 칠하고 천장 스포트라이트를 노른자에 맞춥니다. 어두운 배경에서 노른자 색이 가장 선명하게 살아납니다. 바닥에는 작품명 같은 작은 명패를 둡니다.',
+      board: '칠판에 금색 액자 프레임을 둘러 "오늘의 에그"를 갤러리 전시 안내처럼 적습니다.',
+      tip: '액자 모양은 포맥스에 인쇄해 타일 위에 양면테이프로 붙이면 줄눈 위에서도 평평합니다.',
+      pal: [['#222222', '라인 블랙'], ['#c8a45a', '골드'], ['#2d2c2a', '차콜'], ['#fffdf6', '난백']]
+    });
+  })();
+
+  /* 3. 레시피 노트 */
+  (function () {
+    var g = '#2F5D50', t = '';
+    t += '<g stroke="' + g + '" fill="none" stroke-width="1.6"><path d="M266,236 H474" stroke-dasharray="5 4"/><path d="M266,230 v12 M474,230 v12"/></g>' +
+      '<text x="370" y="254" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="' + g + '">W 2,400 mm</text>';
+    t += '<ellipse cx="120" cy="150" rx="24" ry="32" fill="none" stroke="' + g + '" stroke-width="2"/><text x="120" y="208" text-anchor="middle" font-size="14" font-weight="700" font-family="Noto Sans KR,sans-serif" fill="' + g + '">계란 2개</text>' +
+      '<text x="120" y="226" text-anchor="middle" font-size="10" font-family="Georgia,serif" fill="' + g + '">INGREDIENTS</text>';
+    var steps = [['1', '팩 뜯기', 540, 130], ['2', '팬에 3분', 600, 190], ['3', '바로 완성', 660, 130]];
+    t += '<path d="M540,130 Q570,175 600,190 Q630,175 660,130" fill="none" stroke="' + g + '" stroke-width="1.5" stroke-dasharray="3 5"/>';
+    steps.forEach(function (s) {
+      t += '<circle cx="' + s[2] + '" cy="' + s[3] + '" r="17" fill="#fffdf6" stroke="' + g + '" stroke-width="2"/><text x="' + s[2] + '" y="' + (s[3] + 6) + '" text-anchor="middle" font-size="17" font-weight="700" font-family="Georgia,serif" fill="' + g + '">' + s[0] + '</text>' +
+        '<text x="' + s[2] + '" y="' + (s[3] + 38) + '" text-anchor="middle" font-size="12" font-weight="700" font-family="Noto Sans KR,sans-serif" fill="' + g + '">' + s[1] + '</text>';
+    });
+    t += '<path d="M60,290 h180 M60,284 v12 M240,284 v12" stroke="' + g + '" stroke-width="1.4"/><text x="150" y="280" text-anchor="middle" font-size="10" font-family="Georgia,serif" fill="' + g + '">Easy Recipe Note</text>';
+    var ticks = '';
+    for (var i = 0; i < 12; i++) { var a = i * 30 * Math.PI / 180; ticks += '<line x1="' + (815 + Math.sin(a) * 66).toFixed(1) + '" y1="' + (300 - Math.cos(a) * 66).toFixed(1) + '" x2="' + (815 + Math.sin(a) * 78).toFixed(1) + '" y2="' + (300 - Math.cos(a) * 78).toFixed(1) + '" stroke="#2F5D50" stroke-width="3" stroke-linecap="round"/>'; }
+    concepts.push({
+      id: 3, tag: 'Recipe Note', title: '레시피 노트', lead: '제품이 얼마나 간편한지 벽이 대신 설명해 주는 안입니다. 방문객이 멈춰서 읽게 됩니다.',
+      svg: base({ id: 3, alt: '레시피 노트 시안', tile: t, board: boardPlain('#5b4a3a', '#3b4440', '3분 완성 에그 한 끼', '#ffffff'),
+        alcBg: '#F3EBD6', alcBack: '<circle cx="815" cy="300" r="82" fill="none" stroke="#2F5D50" stroke-width="3"/>' + ticks + '<line x1="815" y1="300" x2="815" y2="236" stroke="#2F5D50" stroke-width="4" stroke-linecap="round"/><circle cx="815" cy="300" r="5" fill="#2F5D50"/>',
+        alcFront: '<text x="815" y="146" text-anchor="middle" font-family="Georgia,serif" font-size="26" font-weight="700" fill="#2F5D50">3 MIN</text>' }),
+      tile: '청사진 같은 진한 초록 선으로 재료, 조리 3단계, 치수선을 그립니다. 칠판 아래에는 작은 치수 표기를 넣어 부스 인테리어 도면처럼 보이게 합니다.',
+      egg: '알코브 벽을 크림색으로 칠하고 노른자 둘레에 거대한 타이머 눈금을 그립니다. 초침이 노른자를 가리키는 구성이라 "3분"이라는 메시지가 한눈에 읽힙니다.',
+      board: '칠판은 시식 대기 시간이나 조리 안내를 적는 용도로 씁니다.',
+      tip: '실제 포장지 뒷면의 조리법 아이콘을 그대로 키우면 브랜드 통일감이 생깁니다.',
+      pal: [['#2F5D50', '잉크 그린'], ['#F3EBD6', '크림'], ['#5b4a3a', '우드'], ['#fffdf6', '난백']]
+    });
+  })();
+
+  /* 4. 팩 컬러 팝 */
+  (function () {
+    var t = '', cols = ['#c23232', '#2f7d4a', '#e8641e'];
+    for (var i = 0; i < 24; i++) for (var j = 0; j < 10; j++) {
+      var x = 40 + i * 28, y = 66 + j * 28;
+      if (x + 28 > 250 && x < 490 && y + 28 > 112 && y < 228) continue;
+      var h = (i * 7 + j * 13 + (i * j) % 5) % 9;
+      if (h < 3) t += '<rect x="' + x + '" y="' + y + '" width="28" height="28" fill="' + cols[h] + '" opacity=".92"/>';
+    }
+    var dots = '';
+    for (var a = 0; a < 6; a++) for (var b = 0; b < 8; b++) dots += '<circle cx="' + (748 + a * 32 + (b % 2) * 16) + '" cy="' + (124 + b * 38) + '" r="6" fill="#fffdf0" opacity=".85"/>';
+    concepts.push({
+      id: 4, tag: 'Pack Color Pop', title: '팩 컬러 팝', lead: '선반에 놓인 빨강·초록·주황 패키지 색을 벽까지 가져와 제품이 곧 인테리어가 되는 안입니다.',
+      svg: base({ id: 4, alt: '팩 컬러 팝 시안', tile: t, board: boardPlain('#f4f4f1', '#2f3633', 'RED · GREEN · ORANGE', '#ffffff'),
+        alcBg: '#2E6B4A', alcBack: dots, alcFront: '<text x="815" y="150" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="15" font-weight="700" fill="#fffdf0">Pick your egg</text>' }),
+      tile: '타일 한 장 크기(약 7×7cm)의 컬러 사각형을 모자이크처럼 흩뿌립니다. 칠판 주변은 비워 두어 글씨가 잘 보이게 합니다. 색 비율은 제품 라인업 순서대로 맞춥니다.',
+      egg: '알코브 벽을 진한 초록으로 칠하고 크림색 점무늬를 넣습니다. 흰 계란 흰자와 노른자가 가장 크게 대비되어 사진이 잘 나옵니다.',
+      board: '칠판에 제품별 색 이름과 맛 설명을 적어 고르는 재미를 줍니다.',
+      tip: '실제 패키지 색의 CMYK 값을 제작사에 전달하고 샘플 칩을 현장에서 맞춰보세요.',
+      pal: [['#c23232', '레드 팩'], ['#2f7d4a', '그린 팩'], ['#e8641e', '오렌지 팩'], ['#2E6B4A', '알코브']]
+    });
+  })();
+
+  /* 5. 팜 투 테이블 */
+  (function () {
+    var t = '<path d="M40,300 C140,252 240,282 340,266 C440,250 560,286 700,254 V340 H40Z" fill="#C7DDB8"/>' +
+      '<path d="M40,322 C160,290 260,314 380,300 C500,288 600,318 700,296 V340 H40Z" fill="#9CC48A"/>' +
+      '<circle cx="610" cy="112" r="26" fill="#F7C948"/>' +
+      '<g stroke="#8a6a4c" stroke-width="3" stroke-linecap="round" fill="none"><path d="M60,290 v-26 M92,290 v-26 M124,290 v-26 M60,274 H124 M60,284 H124"/><path d="M560,288 v-24 M592,288 v-24 M624,288 v-24 M560,272 H624"/></g>' +
+      hen(170, 296, 1, '#fffdf6', '#c23232') +
+      hen(520, 300, 1.15, '#f2d9b0', '#c23232') +
+      '<path d="M310,66 L330,126 M430,66 L410,126" stroke="#8a6a4c" stroke-width="3"/>' +
+      '<g fill="none" stroke="#8fb7d6" stroke-width="2"><path d="M90,100 q10,-16 28,-6 q14,-14 28,2 q14,2 8,14 h-64 q-8,-4 0,-10z"/><path d="M560,170 q8,-12 22,-4 q12,-10 22,2 q12,2 6,10 h-50z"/></g>';
+    var cl = '<ellipse cx="780" cy="150" rx="30" ry="12" fill="#fff"/><ellipse cx="800" cy="142" rx="22" ry="12" fill="#fff"/><ellipse cx="868" cy="200" rx="28" ry="11" fill="#fff"/><ellipse cx="850" cy="192" rx="18" ry="10" fill="#fff"/>';
+    concepts.push({
+      id: 5, tag: 'Farm to Table', title: '팜 투 테이블', lead: '신선함과 산지 이야기를 앞세우는 안입니다. 가족 단위 방문객과 바이어 모두에게 신뢰감을 줍니다.',
+      svg: base({ id: 5, alt: '팜 투 테이블 시안', tile: t, board: boardPlain('#8a6a4c', '#3f4a44', '오늘 아침 농장에서', '#fff8dc'),
+        alcBg: '#a9d8f2', alcBack: '<rect x="730" y="104" width="170" height="296" fill="#d8effa" opacity=".6"/>' + cl,
+        alcFront: hen(872, 372, .8, '#fffdf6', '#c23232') + '<text x="815" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#2b5d82">Farm Fresh</text>' }),
+      tile: '벽 아래쪽에 연두색 언덕과 울타리, 닭을 라인 일러스트로 넣고 칠판은 농장 간판처럼 줄에 매단 모양으로 둡니다. 위쪽 흰 타일은 비워 시원함을 유지합니다.',
+      egg: '알코브 벽을 하늘색으로 칠하고 구름을 얹으면 노른자가 떠 있는 해처럼 보입니다. 오른쪽에 닭 입체 컷아웃을 세워 아이들이 함께 사진을 찍는 자리로 씁니다.',
+      board: '산지 이름, 생산일, 오늘의 입고 소식을 적는 "농장 소식판"으로 씁니다.',
+      tip: '실제 협력 농장 사진을 흑백으로 작게 넣으면 일러스트와 신뢰감이 함께 잡힙니다.',
+      pal: [['#9CC48A', '들판 초록'], ['#a9d8f2', '하늘'], ['#F7C948', '해'], ['#8a6a4c', '우드']]
+    });
+  })();
+
+  var nav = document.getElementById('nav'), list = document.getElementById('list');
+  concepts.forEach(function (c) {
+    var a = document.createElement('a'); a.href = '#c' + c.id; a.textContent = c.id + '. ' + c.title; nav.appendChild(a);
+    var sw = c.pal.map(function (p) { return '<i style="background:' + p[0] + '" title="' + p[1] + '"></i>'; }).join('') + '<span>' + c.pal.map(function (p) { return p[1]; }).join(' · ') + '</span>';
+    var el = document.createElement('article'); el.id = 'c' + c.id;
+    el.innerHTML = '<figure class="art">' + c.svg + '<figcaption>정면 스케치 (보내주신 렌더 구도 기준)</figcaption></figure>' +
+      '<div class="info"><div><div class="tag">' + c.id + ' / 5 · ' + c.tag + '</div><h2>' + c.title + '</h2><p class="lead">' + c.lead + '</p></div>' +
+      '<dl><div><dt>타일 벽면</dt><dd>' + c.tile + '</dd></div><div><dt>계란 알코브 벽면</dt><dd>' + c.egg + '</dd></div><div><dt>칠판 활용</dt><dd>' + c.board + '</dd></div><div><dt>제작 팁</dt><dd>' + c.tip + '</dd></div></dl>' +
+      '<div class="sw">' + sw + '</div></div>';
+    list.appendChild(el);
+  });
+})();
+</script>
